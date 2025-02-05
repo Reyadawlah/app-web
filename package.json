@@ -1,7 +1,7 @@
 {
-  "homepage": "http://reyadawlah.github.io/travel",
   "name": "travel",
   "version": "0.1.0",
+  "homepage": "https://Reyadawlah.github.io/solstice-studios",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^3.5.1",

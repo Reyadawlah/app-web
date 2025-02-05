@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Typography, Box, Link, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { indigo } from "@mui/material/colors";
-import ForestIcon from "@mui/icons-material/Forest";
-import ResponsiveAppBar from "./components/navbar"
-// Custom theme with a green plants aesthetic and elegant fonts
+import ResponsiveAppBar from "./components/navbar";
+import Snowfall from "./components/snowfall"; // Importing Snowfall animation
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -39,8 +39,7 @@ const PrivacyPolicy = () => (
       Privacy Policy
     </Typography>
     <Typography variant="body1">
-      Your privacy is important to us. This app collects minimal data to ensure
-      your experience is smooth and secure. We do not share your data with third parties.
+      Your privacy is important to us. This app collects minimal data to ensure your experience is smooth and secure. We do not share your data with third parties.
     </Typography>
   </Box>
 );
@@ -66,35 +65,39 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <ResponsiveAppBar></ResponsiveAppBar>
-      <Container
-        maxWidth="md"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100vh",
-          textAlign: "center",
-          backgroundImage: "url('https://source.unsplash.com/1600x900/?nature,forest')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          padding: "2rem",
-        }}
-      >
-        <Box textAlign="center" mb={4} style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", padding: "2rem", borderRadius: "1rem", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}>
-          {/* <ForestIcon style={{ fontSize: 60, color: theme.palette.primary.main }} /> */}
-          <Typography variant="h1" color="text.primary" gutterBottom>
-            
-          </Typography>
-          <Typography variant="h2" color="primary.main">
-            Your ultimate travel companion
-          </Typography>
-        </Box>
+      <ResponsiveAppBar />
+      <Box position="relative" minHeight="100vh">
+        <Snowfall /> {/* Adding Snowfall component here */}
+        <Container
+          maxWidth="md"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: "100vh",
+            textAlign: "center",
+            backgroundImage: "url('https://source.unsplash.com/1600x900/?nature,forest')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            padding: "2rem",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          <Box textAlign="center" mb={4} style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", padding: "2rem", borderRadius: "1rem", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}>
+            <Typography variant="h1" color="text.primary" gutterBottom>
+              Welcome to Our Travel Site
+            </Typography>
+            <Typography variant="h2" color="primary.main">
+              Your ultimate travel companion
+            </Typography>
+          </Box>
 
-        <PrivacyPolicy />
-        <ContactInfo />
-      </Container>
+          <PrivacyPolicy />
+          <ContactInfo />
+        </Container>
+      </Box>
     </ThemeProvider>
   );
 };
