@@ -45,7 +45,7 @@ const PrivacyPolicy = () => (
 );
 
 const ContactInfo = () => (
-  <Box bgcolor="rgb(234, 227, 219)" p={4} borderRadius={2} boxShadow={3}>
+  <Box bgcolor="rgba(255, 255, 255, 0.8)" p={4} borderRadius={2} boxShadow={3}>
     <Typography variant="h2" gutterBottom>
       Contact Us
     </Typography>
@@ -87,10 +87,10 @@ const App = () => {
         >
           <Box textAlign="center" mb={4} style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", padding: "2rem", borderRadius: "1rem", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}>
             <Typography variant="h1" color="text.primary" gutterBottom>
-              Welcome to Our Travel Site
+              Welcome to * Studio
             </Typography>
             <Typography variant="h2" color="primary.main">
-              Your ultimate travel companion
+              Minimal apps, maximum impact 
             </Typography>
           </Box>
 
