@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,54 +8,65 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
-const pages = ['Products', 'Privacy Policy', 'Contact Us'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const pages = [
+  { name: 'Products', path: '/' },
+  { name: 'Privacy Policy', path: '/privacy-policy' },
+  { name: 'Contact Us', path: '/contact' }
+];
 
 function ResponsiveAppBar() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  //const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-//   const handleOpenUserMenu = (event) => {
-//     setAnchorElUser(event.currentTarget);
-//   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (path) => {
     setAnchorElNav(null);
+    if (path) {
+      navigate(path);
+    }
   };
 
-//   const handleCloseUserMenu = () => {
-//     setAnchorElUser(null);
-//   };
-
   return (
-    <AppBar position="static">
+    <AppBar 
+      position="static" 
+      sx={{ 
+        backgroundColor: '#0B0B0D',
+        boxShadow: 'none'
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Brightness4Icon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Brightness4Icon 
+            sx={{ 
+              display: { xs: 'none', md: 'flex' }, 
+              mr: 1,
+              color: '#B4BCC8'
+            }} 
+          />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            onClick={() => navigate('/')}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
+              fontFamily: 'DM Serif Display',
+              fontWeight: 400,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#B4BCC8',
               textDecoration: 'none',
+              cursor: 'pointer'
             }}
           >
-            * STUDIO
+            VESPERA TECHNOLOGIES
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -64,7 +76,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{ color: '#B4BCC8' }}
             >
               <MenuIcon />
             </IconButton>
@@ -81,43 +93,66 @@ function ResponsiveAppBar() {
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              onClose={() => handleCloseNavMenu()}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                '& .MuiPaper-root': {
+                  backgroundColor: '#0B0B0D',
+                },
+                '& .MuiMenuItem-root': {
+                  color: '#B4BCC8',
+                }
+              }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                <MenuItem key={page.name} onClick={() => handleCloseNavMenu(page.path)}>
+                  <Typography sx={{ textAlign: 'center', color: '#B4BCC8' }}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Brightness4Icon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Brightness4Icon 
+            sx={{ 
+              display: { xs: 'flex', md: 'none' }, 
+              mr: 1,
+              color: '#B4BCC8'
+            }} 
+          />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            onClick={() => navigate('/')}
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
+              fontFamily: 'DM Serif Display',
+              fontWeight: 400,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#B4BCC8',
               textDecoration: 'none',
+              cursor: 'pointer'
             }}
           >
-            * STUDIO
+            VESPERA TECHNOLOGIES
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                key={page.name}
+                onClick={() => handleCloseNavMenu(page.path)}
+                sx={{ 
+                  my: 2, 
+                  color: '#B4BCC8', 
+                  display: 'block',
+                  fontFamily: 'DM Serif Text',
+                  '&:hover': {
+                    color: '#898BA7'
+                  }
+                }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
@@ -126,4 +161,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;

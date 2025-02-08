@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography } from "@mui/material";
 
-const TravelAppPage = () => {
+const ProductsPage = () => {
   return (
     <Container>
       <Typography variant="h2">Travel App</Typography>
@@ -10,4 +10,4 @@ const TravelAppPage = () => {
   );
 };
 
-export default TravelAppPage;
+export default ProductsPage;
