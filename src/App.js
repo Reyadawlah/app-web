@@ -1,6 +1,7 @@
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ResponsiveAppBar from './components/navbar';
 import Home from './pages/home';
 import Contact from './pages/contact';
@@ -24,11 +25,12 @@ const App = () => {
     <Router>
       <GlobalStyle />
       <ResponsiveAppBar />
-      <Home />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Navigate replace to="/" />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </Router>
   );

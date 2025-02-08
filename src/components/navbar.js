@@ -33,6 +33,10 @@ function ResponsiveAppBar() {
     }
   };
 
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <AppBar 
       position="static" 
@@ -53,8 +57,8 @@ function ResponsiveAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            onClick={() => navigate('/')}
+            component="div"
+            onClick={handleLogoClick}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -121,8 +125,8 @@ function ResponsiveAppBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            onClick={() => navigate('/')}
+            component="div"
+            onClick={handleLogoClick}
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
