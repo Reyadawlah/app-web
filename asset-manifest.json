@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/app-web/static/css/main.e6c13ad2.css",
-    "main.js": "/app-web/static/js/main.e590ff5e.js",
+    "main.js": "/app-web/static/js/main.2748345d.js",
     "static/js/488.f7c63b8c.chunk.js": "/app-web/static/js/488.f7c63b8c.chunk.js",
     "static/media/BrighterParadisePersonalUse-ovqMB.ttf": "/app-web/static/media/BrighterParadisePersonalUse-ovqMB.fbe93b4cd406f6aa916a.ttf",
     "static/media/DMSerifText-Regular.ttf": "/app-web/static/media/DMSerifText-Regular.c63bc97c84c421f39c7a.ttf",
     "static/media/DMSerifDisplay-Regular.ttf": "/app-web/static/media/DMSerifDisplay-Regular.ca478f5117e07586dd07.ttf",
     "index.html": "/app-web/index.html",
     "main.e6c13ad2.css.map": "/app-web/static/css/main.e6c13ad2.css.map",
-    "main.e590ff5e.js.map": "/app-web/static/js/main.e590ff5e.js.map",
+    "main.2748345d.js.map": "/app-web/static/js/main.2748345d.js.map",
     "488.f7c63b8c.chunk.js.map": "/app-web/static/js/488.f7c63b8c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.e590ff5e.js"
+    "static/js/main.2748345d.js"
   ]
 }
