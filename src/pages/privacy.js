@@ -95,14 +95,7 @@ const PrivacyPolicy = () => {
         <Section>
           <SectionTitle>Data Usage</SectionTitle>
           <Text>
-            We do not collect any of your app usage data, so you can be assured that it will not be shared with any third parties.
-          </Text>
-        </Section>
-
-        <Section>
-          <SectionTitle>Data Protection</SectionTitle>
-          <Text>
-            We implement robust security measures to protect your data from unauthorized access, alteration, or disclosure. Your privacy and security are our top priorities.
+            We do not collect any unnecessary data, so you can be assured that your personal information will not be shared with any third parties.
           </Text>
         </Section>
       </ContentContainer>
