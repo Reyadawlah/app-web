@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
         <Section>
           <SectionTitle>Data Usage</SectionTitle>
           <Text>
-            The data we collect is used solely for improving our services and providing you with a better user experience. We do not share your personal information with third parties.
+            We do not collect any of your app usage data, so you can be assured that it will not be shared with any third parties.
           </Text>
         </Section>
 
