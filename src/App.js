@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/app-web">
       <GlobalStyle />
       <ResponsiveAppBar />
       <Routes>
